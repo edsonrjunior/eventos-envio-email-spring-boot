@@ -1,0 +1,15 @@
+version: '3'
+services:
+  email-appx:
+    restart: always
+    build: ./Enviar-email
+    working_dir: /Enviar-email
+    ports:
+    - "8089:8080"
+    environment:
+      SPRING_MAIL_HOST: smtp.gmail.com
+      SPRING_MAIL_PORT: 587
+      SPRING_MAIL_USERNAME: edsonrjunior90@gmail.com
+      SPRING_MAIL_PASSWORD: 55253344
+      SPRING_MAIL.PROPERTIES.MAIL.SMTP.AUTH: "true"
+      SPRING_MAIL.PROPERTIES.MAIL.SMTP.STARTTLS.ENABLE: "true"
